@@ -1,0 +1,35 @@
+<div class="row">
+  <h1>Welcome to BOOK MERGE!</h1>
+</div>
+<div class="row">
+  <div id="prompt" class="col-xs-6 col-md-4">
+    <form id="chosen-books">
+      <div class="form-group">
+        <label for="text1">Book the First:</label>
+        <select name="text1" class="form-control booklist" id="text1" placeholder="First book">
+          <% for key in corpus.keys %>
+            <option value="<%= key %>"><%= key %></option>
+          <% end %>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="text2">Book the Second:</label>
+        <select name="text2" class="form-control booklist" id="text2" placeholder="Second book">
+          <% for key in corpus.keys %>
+            <option value="<%= key %>"><%= key %></option>
+          <% end %>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <button type="button" class="btn btn-warning" id="clear-lines">Clear Lines</button>
+        <button type="button" class="btn btn-primary btn-large" id="get-line" form="chosen-books" type="submit">Get a Line!</button>
+      </div>
+    </form>
+  </div>
+  <div id="output" class="col-xs-12 col-md-8">
+    <div class="modal"><!-- for loading icon --></div>
+    <p class="markov-lines" id="lines"></p>
+  </div>
+</div>
