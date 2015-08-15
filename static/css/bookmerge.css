@@ -44,3 +44,104 @@ select.booklist {
 #output.loading .modal {
   display: inline-block;
 }
+
+li.book {
+  height:100px;
+  width:75px;
+  border-width: 2px,4px,2px,2px;
+  border: double black;
+  float: left;
+  display: inline;
+  text-align: center;
+  padding: 5px;
+  margin: 2px;
+  font-size: .5em;
+  color: rgba(0, 0, 0, 0);
+  background-size: 100%;
+}
+
+/*Book Images*/
+.aliceinwonderland {
+  background-image: url(/assets/alice.jpg);
+}
+
+.anneofgreengables {
+  background-image: url(/assets/anne.jpeg);
+}
+
+.beowulf {
+  background-image: url(/assets/beowulf.jpg);
+}
+
+.apictureofdoriangray {
+  background-image: url(/assets/doriangray.jpg);
+}
+
+.thebible {
+  background-image: url(/assets/bible.jpg);
+}
+
+.thebrothersgrimmfairytales {
+  background-image: url(/assets/grimm.jpeg);
+}
+
+.janeeyre {
+  background-image: url(/assets/jane.jpeg);
+}
+
+.kamasutra {
+  background-image: url(/assets/kamasutra.jpeg);
+}
+
+.littlewomen {
+  background-image: url(/assets/littlewomen.jpeg);
+}
+
+.metamorphosis {
+  background-image: url(/assets/metamorphosis.jpeg);
+}
+
+.mylifebyhelenkeller {
+  background-image: url(/assets/helen.jpeg);
+}
+
+.peterpan {
+  background-image: url(/assets/peterpan.JPG);
+}
+
+.prideandprejudice {
+  background-image: url(/assets/prideandprejudice.jpeg);
+}
+
+.sherlockholmes {
+  background-image: url(/assets/sherlockholmes.jpg);
+}
+
+.twelveyearsaslave {
+  background-image: url(/assets/twelveyearsaslave.jpg);
+}
+
+.ulysses {
+  background-image: url(/assets/ulysses.gif);
+}
+
+.waroftheworlds {
+  background-image: url(/assets/waroftheworlds.jpeg);
+}
+
+.whitefang {
+  background-image: url(/assets/whitefang.jpg);
+}
+
+.thewonderfulwizardofoz {
+  background-image: url(/assets/wizardofoz.jpeg);
+}
+
+.theyellowwallpaper {
+  background-image: url(/assets/yellowwallpaper.jpg);
+}
+
+.theadventuresoftomsawyer {
+  background-image: url(/assets/tom.jpg);
+}
+
