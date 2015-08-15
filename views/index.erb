@@ -1,6 +1,15 @@
 <div class="row">
   <h1>Welcome to BOOK MERGE!</h1>
 </div>
+<div class="row" id="bookpics">
+  <ul> <% corpus.keys.each do |key| %>
+    <li class='book <%= "#{key.gsub(/\s+/, '').downcase}" %>'><%= key %></li>
+    <% end %>
+  </ul>
+</div>
+<!-- <p> here is a break </p>
+<p> these only register if there's text  </p>
+<p> . </p> -->
 <div class="row">
   <div id="prompt" class="col-xs-6 col-md-4">
     <form id="chosen-books">
