@@ -45,6 +45,7 @@ select.booklist {
   background: url('/assets/loading.gif') 50% 50% no-repeat;
 }
 
+
 #output {
   min-height: 16px;
 }

@@ -7,9 +7,7 @@
     <% end %>
   </ul>
 </div>
-<!-- <p> here is a break </p>
-<p> these only register if there's text  </p>
-<p> . </p> -->
+
 <div class="row">
   <div id="prompt" class="col-xs-6 col-md-4">
     <form id="chosen-books">
@@ -19,6 +17,7 @@
           <% for key in corpus.keys %>
             <option value="<%= key %>"><%= key %></option>
           <% end %>
+          <option value="User generated text">User generated text</option>
         </select>
       </div>
 
@@ -28,17 +27,21 @@
           <% for key in corpus.keys %>
             <option value="<%= key %>"><%= key %></option>
           <% end %>
+          <option value="User generated text">User generated text</option>
         </select>
       </div>
 
       <div class="form-group">
         <button type="button" class="btn btn-warning" id="clear-lines">Clear Lines</button>
         <button type="button" class="btn btn-primary btn-large" id="get-line" form="chosen-books" type="submit">Get a Line!</button>
+        <p><br>Or you can add your own text! Paste your book text below and select "user-generated text" from one or both drop-down menus above.</p>
       </div>
     </form>
+    <textarea rows="4" cols="50" id="usertext" name="usertext" form="chosen-books">It was the best of times, it was the worst of times...</textarea>
   </div>
   <div id="output" class="col-xs-12 col-md-8">
     <div class="modal"><!-- for loading icon --></div>
     <p class="markov-lines" id="lines"></p>
   </div>
 </div>
+

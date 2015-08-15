@@ -9,28 +9,6 @@
 require 'markov_chains'
 require 'sinatra'
 require './corpus.rb'
-# corpus = {
-#   'The Adventures of Tom Sawyer' => 'tom_sawyer.txt',
-#   'Alice in Wonderland' => 'alice_in_wonderland.txt',
-#   'Anne of Green Gables' => 'anne_of_green_gables.txt',
-#   'Beowulf' => 'beowulf.txt',
-#   'The Bible' => 'the_bible.txt',
-#   'The Brothers Grimm Fairy Tales' => 'grimms.txt',
-#   'Jane Eyre' => 'jane_eyre.txt',
-#   'Kama Sutra' => 'kama_sutra.txt',
-#   'Little Women' => 'little_women.txt',
-#   'Metamorphosis' => 'metamorphosis.txt',
-#   'My Life, by Helen Keller' => 'helen_keller.txt',
-#   'Peter Pan' => 'peter_pan.txt',
-#   'A Picture of Dorian Gray' => 'dorian_gray.txt',
-#   'Pride & Prejudice' => 'pride_and_prejudice.txt',
-#   'Sherlock Holmes' => 'sherlock_holmes.txt',
-#   '12 Years a Slave' => 'twelve_years_a_slave.txt',
-#   'Ulysses' => 'ulysses.txt',
-#   'War of the Worlds' => 'war_of_the_worlds.txt',
-#   'The Wonderful Wizard of Oz' => 'wizard_of_oz.txt',
-#   'The Yellow Wallpaper' => 'yellow_wallpaper.txt'
-# }
 
 set :public_folder, File.dirname(__FILE__) + '/static'
 enable :logging
@@ -38,6 +16,10 @@ enable :sessions
 
 $mycorpus = Corpus.new
 $generators = Hash.new
+
+def add_text_to_corpus(text)
+  $mycorpus.addtext(text)
+end
 
 ## Original bookmerge.rb logic is more or less in here:
 def get_generator(text1, text2, corpus=nil)
@@ -56,8 +38,13 @@ end
 
 # Return a plaintext sentence from the combined texts
 post '/displaytext' do
-  text1, text2 = params[:text1], params[:text2]
+  text1, text2, usertext = params[:text1], params[:text2], params[:usertext]
   begin
+    if text1 == 'User generated text'
+      add_text_to_corpus(usertext)
+    elsif text2 == 'User generated text'
+      add_text_to_corpus(usertext)
+    end
     get_generator(text1, text2).get_sentences(1)
   rescue Exception => err
     p "Something has gone wrong: #{err}"

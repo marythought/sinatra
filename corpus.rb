@@ -24,10 +24,14 @@ class Corpus
     }
   end
 
-  def add(books)
+  def addbook(book)
     books.each do |title, file|
       @corpus[title] = file
     end
+  end
+
+  def addtext(text)
+    @corpus['User generated text'] = text
   end
 
   def keys
@@ -37,13 +41,24 @@ class Corpus
   def lookup_file(title)
     @corpus[title]
   end
-
 end
 
 def combine_texts(text1, text2, library)
-  file1 = File.read('texts/' + library.lookup_file(text1))
-  file2 = File.read('texts/' + library.lookup_file(text2))
-  wholetext = file1 + file2
+  if text1 == 'User generated text' && text2 == 'User generated text'
+    wholetext = text1
+  elsif text1 == 'User generated text'
+    file1 = library.lookup_file(text1)
+    file2 = File.read('texts/' + library.lookup_file(text2))
+    wholetext = file1 + file2
+  elsif text2 == 'User generated text'
+    file1 = File.read('texts/' + library.lookup_file(text1))
+    file2 = library.lookup_file(text2)
+    wholetext = file1 + file2
+  else
+    file1 = File.read('texts/' + library.lookup_file(text1))
+    file2 = File.read('texts/' + library.lookup_file(text2))
+    wholetext = file1 + file2
+  end
 end
 
 mycorpus = Corpus.new
