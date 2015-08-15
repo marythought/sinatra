@@ -52,4 +52,4 @@ mycorpus = Corpus.new
 # puts combine_texts('Alice in Wonderland', 'The Yellow Wallpaper', mycorpus)
 
 # test lookup keys
-puts mycorpus.keys()
+# puts mycorpus.keys()
