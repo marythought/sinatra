@@ -28,7 +28,11 @@ def get_generator(text1, text2, usertext, corpus=nil)
   texts = [text1, text2].sort
   generator_id = "#{texts[0].gsub(/\s+/, "")}_and_#{texts[1].gsub(/\s+/, "")}".downcase.to_sym
   # Either take the existing generator, or create a new one and store it.
-  $generators[generator_id] =  MarkovChains::Generator.new(wholetext)
+  if generator_id.to_s.include?("user")
+    $generators[generator_id] =  MarkovChains::Generator.new(wholetext)
+  else
+    $generators[generator_id] ||=  MarkovChains::Generator.new(wholetext)
+  end
 end
 
 get '/' do
@@ -39,7 +43,7 @@ end
 post '/displaytext' do
   text1, text2, usertext = params[:text1], params[:text2], params[:usertext]
   begin
-    get_generator(text1, text2, usertext).get_sentences(6)
+    get_generator(text1, text2, usertext).get_sentences(1)
   rescue Exception => err
     p "Something has gone wrong: #{err}"
     nil
