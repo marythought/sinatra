@@ -18,6 +18,9 @@
      ajaxStop: function() { $("#output").removeClass("loading"); }
   });
 
+  // Run a post command if getLine function is activated with 'User generated text' as one of two choices
+  // how do i do this???
+
   // Add line to line display (p#lines)
   function appendLine(l) {
     $("#lines").append(l + " ")

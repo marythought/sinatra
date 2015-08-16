@@ -34,6 +34,10 @@ class Corpus
     @corpus['User generated text'] = text
   end
 
+  def clearusertext
+    @corpus.delete('User generated text')
+  end
+
   def keys
     @corpus.keys
   end
@@ -45,7 +49,7 @@ end
 
 def combine_texts(text1, text2, library)
   if text1 == 'User generated text' && text2 == 'User generated text'
-    wholetext = text1
+    wholetext = library.lookup_file(text1)
   elsif text1 == 'User generated text'
     file1 = library.lookup_file(text1)
     file2 = File.read('texts/' + library.lookup_file(text2))

@@ -17,8 +17,11 @@ enable :sessions
 $mycorpus = Corpus.new
 $generators = Hash.new
 
-def add_text_to_corpus(text)
-  $mycorpus.addtext(text)
+def add_text_to_corpus(text, corpus=nil)
+  corpus ||= $mycorpus
+  corpus.clearusertext
+  corpus.addtext(text)
+  return corpus
 end
 
 ## Original bookmerge.rb logic is more or less in here:
@@ -41,9 +44,9 @@ post '/displaytext' do
   text1, text2, usertext = params[:text1], params[:text2], params[:usertext]
   begin
     if text1 == 'User generated text'
-      add_text_to_corpus(usertext)
+      add_text_to_corpus(usertext, corpus=nil)
     elsif text2 == 'User generated text'
-      add_text_to_corpus(usertext)
+      add_text_to_corpus(usertext, corpus=nil)
     end
     get_generator(text1, text2).get_sentences(1)
   rescue Exception => err
