@@ -24,11 +24,11 @@ class Corpus
     }
   end
 
-  def addbook(book)
-    books.each do |title, file|
-      @corpus[title] = file
-    end
-  end
+  # def addbook(book)
+  #   books.each do |title, file|
+  #     @corpus[title] = file
+  #   end
+  # end
 
   def addtext(text)
     @corpus['User generated text'] = text
@@ -64,8 +64,6 @@ def combine_texts(text1, text2, library)
     wholetext = file1 + file2
   end
 end
-
-mycorpus = Corpus.new
 
 # # test combine text
 # puts combine_texts('Alice in Wonderland', 'The Yellow Wallpaper', mycorpus)
