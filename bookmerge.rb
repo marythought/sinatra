@@ -39,7 +39,7 @@ end
 post '/displaytext' do
   text1, text2, usertext = params[:text1], params[:text2], params[:usertext]
   begin
-    get_generator(text1, text2, usertext).get_sentences(10)
+    get_generator(text1, text2, usertext).get_sentences(6)
   rescue Exception => err
     p "Something has gone wrong: #{err}"
     nil

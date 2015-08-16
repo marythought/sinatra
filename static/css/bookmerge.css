@@ -28,12 +28,13 @@ select.booklist {
   width: 90%;
 }
 
-.markov-lines {
+.markov-lines, .form-group {
   font-family: 'PT Mono', ;
 }
 
-.form-group {
+#usertext {
   font-family: 'PT Mono', ;
+  font-size: .8em;
 }
 
 .modal {
@@ -45,6 +46,9 @@ select.booklist {
   background: url('/assets/loading.gif') 50% 50% no-repeat;
 }
 
+.biggertext {
+  font-size: 1.3em;
+}
 
 #output {
   min-height: 16px;
