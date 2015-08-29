@@ -77,6 +77,12 @@ li.book {
   background-size: 100%;
 }
 
+@each $book in @corpus {
+  .#{$book}-bg {
+    background-image: url('assets/#{$book}.jpg');
+  }
+}
+
 /*Book Images*/
 .aliceinwonderland {
   background-image: url(/assets/alice.jpg);

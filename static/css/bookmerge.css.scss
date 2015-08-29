@@ -1,0 +1,178 @@
+require './corpus.rb'
+
+.brand {
+  color: #bae;
+}
+
+* {
+  font-family: 'Reenie Beanie', cursive;
+}
+
+body {
+  padding-top: 50px;
+}
+
+footer {
+    background-color: #bae;
+    padding-left: 20px;
+    padding-top: 12px;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+    font-size: 1.3em;
+}
+
+footer .container .right {
+    float:right;
+}
+
+select.booklist {
+  width: 90%;
+}
+
+.markov-lines, .form-group {
+  font-family: 'PT Mono', ;
+}
+
+#usertext {
+  font-family: 'PT Mono', ;
+  font-size: .8em;
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  left: 50%;
+  top: 2%;
+  background: url('/assets/loading.gif') 50% 50% no-repeat;
+}
+
+.biggertext {
+  font-size: 1.3em;
+}
+
+#output {
+  min-height: 16px;
+}
+
+#bookpics {
+  padding-bottom: 50px;
+}
+
+#output.loading .modal {
+  display: inline-block;
+}
+
+li.book {
+  height:100px;
+  width:75px;
+  border-width: 2px,4px,2px,2px;
+  border: double black;
+  float: left;
+  display: inline;
+  text-align: center;
+  padding: 5px;
+  margin: 2px;
+  font-size: .5em;
+  color: rgba(0, 0, 0, 0);
+  background-size: 100%;
+}
+
+ // how would this work???
+
+@each $book in @corpus.keys {
+  .#{$book}-bg {
+    background-image: url('assets/#{$book}.jpg');
+  }
+}
+
+/*Book Images*/
+.aliceinwonderland {
+  background-image: url(/assets/alice.jpg);
+}
+
+.anneofgreengables {
+  background-image: url(/assets/anne.jpeg);
+}
+
+.beowulf {
+  background-image: url(/assets/beowulf.jpg);
+}
+
+.apictureofdoriangray {
+  background-image: url(/assets/doriangray.jpg);
+}
+
+.thebible {
+  background-image: url(/assets/bible.jpg);
+}
+
+.thebrothersgrimmfairytales {
+  background-image: url(/assets/grimm.jpeg);
+}
+
+.janeeyre {
+  background-image: url(/assets/jane.jpeg);
+}
+
+.kamasutra {
+  background-image: url(/assets/kamasutra.jpeg);
+}
+
+.littlewomen {
+  background-image: url(/assets/littlewomen.jpeg);
+}
+
+.metamorphosis {
+  background-image: url(/assets/metamorphosis.jpeg);
+}
+
+.mylifebyhelenkeller {
+  background-image: url(/assets/helen.jpeg);
+}
+
+.peterpan {
+  background-image: url(/assets/peterpan.JPG);
+}
+
+.prideandprejudice {
+  background-image: url(/assets/prideandprejudice.jpeg);
+}
+
+.sherlockholmes {
+  background-image: url(/assets/sherlockholmes.jpg);
+}
+
+.twelveyearsaslave {
+  background-image: url(/assets/twelveyearsaslave.jpg);
+}
+
+.ulysses {
+  background-image: url(/assets/ulysses.gif);
+}
+
+.waroftheworlds {
+  background-image: url(/assets/waroftheworlds.jpeg);
+}
+
+.whitefang {
+  background-image: url(/assets/whitefang.jpg);
+}
+
+.thewonderfulwizardofoz {
+  background-image: url(/assets/wizardofoz.jpeg);
+}
+
+.theyellowwallpaper {
+  background-image: url(/assets/yellowwallpaper.jpg);
+}
+
+.theadventuresoftomsawyer {
+  background-image: url(/assets/tom.jpg);
+}
+
+.usergeneratedtext {
+  background-image: url(/assets/questionmark.png);
+}
+
