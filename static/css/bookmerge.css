@@ -3,7 +3,7 @@
 }
 
 * {
-  font-family: 'Reenie Beanie', cursive;
+  font-family: sans-serif;
 }
 
 body {
@@ -34,7 +34,6 @@ select.booklist {
 
 #usertext {
   font-family: 'PT Mono', ;
-  font-size: .8em;
 }
 
 .modal {
